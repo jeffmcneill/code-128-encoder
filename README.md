@@ -2,6 +2,8 @@
 
 an optimizing code-128 encoder for node.js, the commandline, and your browser.
 
+[live example](examples/html/encoder.html)
+
 **this is not a renderer!**
 
 this is a specialized encoder, which you can use to write your own renderer see the [examples](#examples)
@@ -73,7 +75,7 @@ prints: `ÑTestWÓ`
 
 you can pass an options parameter to specify the output.
 
-    encoder.encode("Text",{output:"ascii"})
+    encoder.encode("Text",{output:"ascii",mapping:0})
 
 the output parameter can be one of:
 
@@ -84,6 +86,14 @@ the output parameter can be one of:
 | weights | 2112142133111122141142121241123113212331112 | each number represents a width alternating between bars and spaces |
 | codes | [ 104, 52, 69, 83, 84, 55, 106 ] | an array of code numbers as per the code 128 spec |
 | array | [ 209, 84, 101, 115, 116, 87, 211 ] | the ascii code points of the encoded string |
+
+the mapping parameter changes the ascci character mapping and can be one of:
+
+| name | description |
+| --- | --- |
+| 0 | most common mapping (compatible with google fonts) |
+| 1 | barcodesoft mapping|
+| 2 | mapping used by my old fonds (as due to a wrong/uncommom mapping in wikipedia) |
 
 
 ### Examples Folder
